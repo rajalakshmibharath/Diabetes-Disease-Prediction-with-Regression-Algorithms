@@ -2,4 +2,19 @@ pandas
 seaborn
 matplotlib
 numpy
--e .
+sklearn
+confusion_matrix
+accuracy_score
+train_test_split
+SMOTE
+StandardScaler
+plotly
+#xgboost
+#XGBClassifier
+RandomForestClassifier
+LogisticRegression
+DecisionTreeClassifier
+KNeighborsClassifier
+classification_report
+
+#-e .
