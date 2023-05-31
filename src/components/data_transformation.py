@@ -82,11 +82,11 @@ class DataTransformation:
 	
 
 			# Print shapes for debugging
-			print("Shape of input_feature_train_arr:", input_feature_train_arr.shape)
-			print("Shape of input_feature_test_arr:", input_feature_test_arr.shape)
-			print("Number of columns in input_feature_train_df:", input_feature_train_df.shape[1])
-			print(len(all_columns))
-			print("Number of transformers in preprocessor:", len(preprocessing_obj.transformers_))
+			#print("Shape of input_feature_train_arr:", input_feature_train_arr.shape)
+			#print("Shape of input_feature_test_arr:", input_feature_test_arr.shape)
+			#print("Number of columns in input_feature_train_df:", input_feature_train_df.shape[1])
+			#print(len(all_columns))
+			#print("Number of transformers in preprocessor:", len(preprocessing_obj.transformers_))
 
 			# converting the features both input and target to numpy array
 			train_arr = np.c_[input_feature_train_arr, np.array(target_feature_train_df)]

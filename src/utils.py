@@ -5,22 +5,13 @@ import pandas as pd
 import dill
 
 from src.exception import CustomException
+from sklearn.metrics import accuracy_score
+from sklearn.model_selection import GridSearchCV
 
 
 def replace_func(X):
     return X.apply(lambda col: col.replace(0, np.nan,inplace= True) if col.name not in ['Pregnancies'] else col)
 
-	
-#def replace_func(X):
- #   try:
-   #     for col in X.columns:
-    #        if col=='Pregnancies':
-     #           continue
-      #      else:
-      #          X[col].replace(0, np.nan,inplace= True)
-       # return X
-    #except Exception as e:
-     #   raise CustomException(e,sys)
 
 
 def save_object(file_path,obj):
@@ -33,3 +24,29 @@ def save_object(file_path,obj):
 
 	except Exception as e:
 		raise CustomException(e,sys)
+	
+	
+def evaluate_models(x_train,y_train,x_test,y_test,models):
+
+	try:
+		report ={}
+
+		for i in range(len(models)):
+			model = list(models.values())[i]
+
+			model.fit(x_train,y_train)
+
+			y_train_pred = model.predict(x_train)
+
+			y_test_pred = model.predict(x_test)
+
+			train_model_score = accuracy_score(y_train,y_train_pred)
+		
+			test_model_score = accuracy_score(y_test,y_test_pred)
+		
+			report[list(models.keys())[i]] = test_model_score
+
+			return report			
+
+	except Exception as e:
+		raise CustomException(e, sys)

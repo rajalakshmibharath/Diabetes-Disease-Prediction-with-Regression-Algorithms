@@ -10,6 +10,9 @@ from dataclasses import dataclass #it is used to create dat variables
 from src.components.data_transformation import DataTransformation
 from src.components.data_transformation import DataTransformationConfig
 
+from src.components.model_trainer import ModelTrainerConfig
+from src.components.model_trainer import ModelTrainer
+
 
 #the below class shows that components where to save thetrain data , test data ans he raw data 
 @dataclass  #basically inside a class to define variuables we used init function but wecan directly assign variable if we use dataclass decorator
@@ -54,3 +57,6 @@ if __name__=='__main__':
 
 		data_transformation_obj = DataTransformation()
 		train_arr, test_arr, preprocessor_obj_file_path = data_transformation_obj.initiate_data_transformation(train_data,test_data)
+
+		modeltrainer = ModelTrainer()
+		print(modeltrainer.initiate_model_trainer(train_arr,test_arr))
