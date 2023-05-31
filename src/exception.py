@@ -1,4 +1,5 @@
 import sys # sys will have all informarion reagarding the exception
+from src.logger import logging 
 
 # creating custome error message 
 def error_message_detail(error, error_detail:sys): #the error details is present in the sys
@@ -11,7 +12,7 @@ def error_message_detail(error, error_detail:sys): #the error details is present
 
 class CustomException(Exception):
 	def __init__(self,error_message, error_detail:sys):
-		super().__init(error_message)   #inheriting the init function
+		super().__init__(error_message)   #inheriting the init function
 		self.error_message = error_message_detail(error_message, error_detail= error_detail)
 
 	def __str__(self):

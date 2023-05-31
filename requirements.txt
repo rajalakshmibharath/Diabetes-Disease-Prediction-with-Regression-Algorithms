@@ -2,13 +2,14 @@ pandas
 seaborn
 matplotlib
 numpy
-sklearn
+scikit-learn
 confusion_matrix
 accuracy_score
 train_test_split
 SMOTE
 StandardScaler
 plotly
+imblearn
 #xgboost
 #XGBClassifier
 RandomForestClassifier
@@ -16,5 +17,6 @@ LogisticRegression
 DecisionTreeClassifier
 KNeighborsClassifier
 classification_report
+dill
 
 #-e .
