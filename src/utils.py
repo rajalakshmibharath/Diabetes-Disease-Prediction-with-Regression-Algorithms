@@ -7,17 +7,20 @@ import dill
 from src.exception import CustomException
 
 
-	
 def replace_func(X):
-    try:
-        for col in X.columns:
-            if col=='Pregnancies':
-                continue
-            else:
-                X[col].replace(0, np.nan,inplace= True)
-        return X
-    except Exception as e:
-        raise CustomException(e,sys)
+    return X.apply(lambda col: col.replace(0, np.nan,inplace= True) if col.name not in ['Pregnancies'] else col)
+
+	
+#def replace_func(X):
+ #   try:
+   #     for col in X.columns:
+    #        if col=='Pregnancies':
+     #           continue
+      #      else:
+      #          X[col].replace(0, np.nan,inplace= True)
+       # return X
+    #except Exception as e:
+     #   raise CustomException(e,sys)
 
 
 def save_object(file_path,obj):

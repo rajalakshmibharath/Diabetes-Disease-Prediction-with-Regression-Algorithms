@@ -6,7 +6,7 @@ def error_message_detail(error, error_detail:sys): #the error details is present
 		# the error_detail.exc_info returns three variables out of which the third variables gives the info on what is the error, where it occured (which line)
 		_,_,exc_tb = error_detail.exc_info()
 		file_name = exc_tb.tb_frame.f_code.co_filename
-		error_message = "Error occured in the pzthon script name [{0}] line no [{1}] error message [{2}]".format(file_name, exc_tb.tb_lineno,str(error))
+		error_message = "Error occured in the python script name [{0}] line no [{1}] error message [{2}]".format(file_name, exc_tb.tb_lineno,str(error))
 		
 		return error_message
 

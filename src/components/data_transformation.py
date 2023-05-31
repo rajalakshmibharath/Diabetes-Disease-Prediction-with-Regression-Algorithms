@@ -79,6 +79,8 @@ class DataTransformation:
 			input_feature_train_arr = preprocessing_obj.fit_transform(input_feature_train_df)
 			input_feature_test_arr = preprocessing_obj.transform(input_feature_test_df)
 
+	
+
 			# Print shapes for debugging
 			print("Shape of input_feature_train_arr:", input_feature_train_arr.shape)
 			print("Shape of input_feature_test_arr:", input_feature_test_arr.shape)
