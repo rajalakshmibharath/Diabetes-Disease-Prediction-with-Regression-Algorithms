@@ -79,7 +79,8 @@ class DataTransformation:
 			input_feature_train_arr = preprocessing_obj.fit_transform(input_feature_train_df)
 			input_feature_test_arr = preprocessing_obj.transform(input_feature_test_df)
 
-	
+			sm = SMOTE()
+			input_feature_train_arr,target_feature_train_df = sm.fit_resample(input_feature_train_arr,target_feature_train_df)
 
 			# Print shapes for debugging
 			#print("Shape of input_feature_train_arr:", input_feature_train_arr.shape)

@@ -49,22 +49,54 @@ class ModelTrainer:
 			#Defining all models as a dictionary 
 
 			models = {
-									'LogisticRegression':LogisticRegression(),
-									'DecisionTreeClassifier': DecisionTreeClassifier(),
-									'KNeighborsClassifier':KNeighborsClassifier(),
-									'RandomForestClassifier': RandomForestClassifier(),
-									'XGBClassifier': XGBClassifier(),
-									
-									}
+				'LogisticRegression':LogisticRegression(),
+				'DecisionTreeClassifier': DecisionTreeClassifier(),
+				'KNeighborsClassifier':KNeighborsClassifier(),
+				'RandomForestClassifier': RandomForestClassifier(),
+				'XGBClassifier': XGBClassifier(),
+				}
+				
+			# Define the parameter grids for each model
+			params = {
+				'LogisticRegression': {
+					'C': [0.1, 1.0, 10.0],
+					'max_iter': [100, 500, 1000]
+				},
+				'RandomForestClassifier': {
+					'n_estimators': [10, 17, 25, 33, 41, 48],
+					'criterion': ['gini', 'entropy'],
+					'max_depth': [2, 3, 4, 5, 6],
+					'min_samples_split': [2, 3, 4]
+				},
+				'DecisionTreeClassifier': {
+					'criterion': ['gini', 'entropy'],
+					'max_depth': [2, 3, 4, 5, 6],
+					'splitter': ['best', 'random'],
+					'min_samples_split': [2, 3, 4],
+					'min_samples_leaf': [1, 2, 3, 5, 7]
+				},
+				'KNeighborsClassifier': {
+					'n_neighbors': [1, 2, 3, 5, 7,10]
+					
+				},
+				'XGBClassifier': {
+					'learning_rate': [0.05, 0.10, 0.15, 0.20, 0.25],
+					'max_depth': [2, 3, 4, 5, 6, 8, 9],
+					'min_child_weight': [1, 3, 4, 5, 7],
+					'gamma': [0.3, 0.4, 0.5, 0.7]
+							
+				},
+			}
 
 			
 
 			#evaluate_model function is created inside utils 
 			model_report:dict = evaluate_models(x_train = x_train,
-											y_train = y_train,
-						                    x_test = x_test,
-			                                y_test = y_test,
-		                                    models = models)
+				       y_train = y_train,
+					   x_test = x_test,
+					   y_test = y_test,
+					   models = models,
+					   param = params)
 
 			
 			best_model_score = max(sorted(model_report.values()))
