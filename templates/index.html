@@ -1,0 +1,58 @@
+<html>
+<body>
+    <div class="login">
+       <h1>Diabetes Prediction</h1>
+   
+       <form action="{{ url_for('predict_datapoint')}}" method="post">
+        <h1>
+            <legend>Diabetes Prediction</legend>
+        </h1>
+        <div class="mb-3">
+            <label class="form-label">Pregnancies</label>
+            <input class="form-control" type="number" name="Pregnancies"
+                placeholder="Enter the no of Pregnancies" />
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Glucose</label>
+            <input class="form-control" type="number" name="Glucose"
+                placeholder="Enter the Glucose level" />
+        </div>
+        <div class="mb-3">
+            <label class="form-label">BloodPressure</label>
+            <input class="form-control" type="number" name="BloodPressure"
+                placeholder="Enter BloodPressure level" />
+        </div>
+        <div class="mb-3">
+            <label class="form-label">SkinThickness</label>
+            <input class="form-control" type="number" name="SkinThickness"
+                placeholder="Enter SkinThickness val" />
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Insulin</label>
+            <input class="form-control" type="number" name="Insulin"
+                placeholder="Enter the Insulin level" />
+        </div>
+        <div class="mb-3">
+            <label class="form-label">BMI</label>
+            <input class="form-control" type="float" name="BMI"
+                placeholder="Enter the BMI value" />
+        </div>
+        <div class="mb-3">
+            <label class="form-label">DiabetesPedigreeFunction</label>
+            <input class="form-control" type="float" name="DiabetesPedigreeFunction"
+                placeholder="Enter DiabetesPedigreeFunction val" />
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Age</label>
+            <input class="form-control" type="number" name="Age"
+                placeholder="Enter the Age" />
+        </div>
+
+        <div class="mb-3">
+            <input class="btn btn-primary" type="submit" value="Predict " required />
+        </div>
+    </form>
+    <h2>
+    THE  prediction is {{results}}</h2>
+   <body>
+</html>
