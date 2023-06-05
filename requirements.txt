@@ -1,25 +1,10 @@
-pandas 
+pandas
+numpy
 seaborn
 matplotlib
-numpy
-scikit-learn>=0.24.2
+scikit-learn
+catboost
+xgboost
+Flask
 
-confusion_matrix
-accuracy_score
-train_test_split
-SMOTE
-StandardScaler
-plotly
-imblearn
-#xgboost
-#XGBClassifier
-RandomForestClassifier
-LogisticRegression
-DecisionTreeClassifier
-KNeighborsClassifier
-classification_report
-dill
-flask
-pickle 
-
--e .
+#-e .
