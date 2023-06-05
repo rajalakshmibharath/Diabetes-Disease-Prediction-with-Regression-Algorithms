@@ -2,7 +2,8 @@ pandas
 seaborn
 matplotlib
 numpy
-scikit-learn
+scikit-learn>=0.24.2
+
 confusion_matrix
 accuracy_score
 train_test_split
@@ -20,4 +21,5 @@ classification_report
 dill
 flask
 pickle 
-#-e .
+
+-e .
