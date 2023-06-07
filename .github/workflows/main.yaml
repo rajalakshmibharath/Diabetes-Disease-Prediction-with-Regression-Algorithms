@@ -27,9 +27,7 @@ jobs:
       - name: Run unit tests
         run: echo "Running unit tests"
 	
-	#ecr in aws is used to store private docker images 
-
-	'''Normally docker images are pushed to docker hub for everyone to access but in case of conpanies he docker images will be private so that images are pushed to ecr in aws before deplyemnet'''
+	
   build-and-push-ecr-image:
     name: Continuous Delivery
     needs: integration
