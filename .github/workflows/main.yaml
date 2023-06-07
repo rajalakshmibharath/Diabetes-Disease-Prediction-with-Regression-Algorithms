@@ -1,6 +1,5 @@
-name: workflow    
+name: workflow
 
-#whenerver the project is pushed everything except the readme is pushed 
 on:
   push:
     branches:
@@ -12,9 +11,8 @@ permissions:
   id-token: write
   contents: read
 
-#3jobs are happening like integration, push into ecr image and continuous deployment
 jobs:
-  integration: #contuous integration
+  integration:
     name: Continuous Integration
     runs-on: ubuntu-latest
     steps:
@@ -26,8 +24,7 @@ jobs:
 
       - name: Run unit tests
         run: echo "Running unit tests"
-	
-	
+
   build-and-push-ecr-image:
     name: Continuous Delivery
     needs: integration
