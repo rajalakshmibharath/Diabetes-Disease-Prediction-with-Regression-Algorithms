@@ -48,4 +48,4 @@ def predict_datapoint():
     
 
 if __name__=="__main__":
-    app.run(host="0.0.0.0") #this host address is going to map with 127.0.0.1. usual thing
+    app.run(host="0.0.0.0", port=80) #this host address is going to map with 127.0.0.1. usual thing
